@@ -1,8 +1,6 @@
 package com.springboot.restapi.webshoppingapi.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -21,7 +19,7 @@ public class ProductLines {
 
     private String htmlDescription;
 
-    private String image;
-
-
+    @Lob
+    @Column(name = "image", length = 1000)
+    private byte[] image;
 }

@@ -43,7 +43,4 @@ public class Products {
     @JsonManagedReference
     private List<OrderDetails> orderDetails = new ArrayList<>();
 
-//    @OneToOne(mappedBy = "productCode", cascade = CascadeType.ALL, orphanRemoval = true)
-//    @JsonManagedReference
-//    private OrderDetails orderDetails = new OrderDetails();
 }

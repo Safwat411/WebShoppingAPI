@@ -5,6 +5,4 @@ public record Response<T>(
         String message,
         boolean status,
         T data
-) {
-
-}
+) {}

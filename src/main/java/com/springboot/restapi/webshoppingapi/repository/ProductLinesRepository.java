@@ -9,8 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ProductLinesRepository extends JpaRepository<ProductLines, Long> {
+public interface ProductLinesRepository extends JpaRepository<ProductLines, String> {
     @Query("SELECT pl FROM ProductLines pl WHERE pl.productLine = :productLine")
     Optional<ProductLines> findByProductLine(@Param("productLine") String productLine);
+
+
 }
 

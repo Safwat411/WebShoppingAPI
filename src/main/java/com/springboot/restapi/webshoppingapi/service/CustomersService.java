@@ -62,7 +62,7 @@ public class CustomersService {
     }
 
     public Customers updateCustomer(Customers customer){
-      return customersRepo.save(customer);
+        return customersRepo.save(customer);
     }
 
     public void deleteCustomer(Long id){

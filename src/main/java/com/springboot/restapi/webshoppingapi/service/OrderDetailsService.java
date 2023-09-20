@@ -63,7 +63,15 @@ public class OrderDetailsService {
         return orderDetailsRepo.save(orderDetails);
     }
 
-    public OrderDetails updateOrderDetails(OrderDetails orderDetails){
+    public OrderDetails updateOrderDetails(Long orderNumber, Long productCode, OrderDetails orderDetails){
+        Optional<Orders> optionalOrders = this.ordersRepo.findById(orderNumber);
+        Orders order = optionalOrders.get();
+        orderDetails.setOrderNumber(order);
+
+        Optional<Products> optionalProducts = this.productsRepo.findById(productCode);
+        Products product = optionalProducts.get();
+        orderDetails.setProductCode(product);
+
         return orderDetailsRepo.save(orderDetails);
     }
 
